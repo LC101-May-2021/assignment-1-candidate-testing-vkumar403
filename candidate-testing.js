@@ -31,22 +31,21 @@ function askQuestion() {
 
 
 function gradeQuiz(candidateAnswers) {
-
-  // 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-/*if (candidateAnswer == correctAnswer){
-  console.log("Correct.");
-} else {
-  console.log("Incorrect. Try again.");
-}
-*/
-
-for (let i = 0; i < candidateAnswers.length; i++) {
-    console.log(`Your Answer: ${candidateAnswers[i]} Correct Answer: ${correctAnswers[i]}`)
-}
-
-  let grade;
+ let numberCorrect = 0;
+ for (let i = 0; i < candidateAnswers.length; i++) { 
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      numberCorrect += 1;      
+    }
+  }  
   
-
+  let grade = ((numberCorrect / questions.length) * 100);
+  console.log(grade);
+  if (grade >= 80) {
+    status = 'PASSED';
+  } else {
+    status = 'FAILED';
+  }
+  console.log(status);
   return grade;
 }
 
