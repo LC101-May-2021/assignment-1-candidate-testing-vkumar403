@@ -24,7 +24,7 @@ function askForName() {
 function askQuestion() {
   // 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++) {
-    correctAnswer = input.question(`${questions[i]} `);
+    correctAnswer = input.question(questions[i]);
     candidateAnswers.push(correctAnswer);
   }
 }
